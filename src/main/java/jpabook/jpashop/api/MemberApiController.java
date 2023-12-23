@@ -24,8 +24,6 @@ public class MemberApiController {
 
     /**
      * 실제 엔티티를 파라미터로 받지 않아야 한다.
-     * @param member
-     * @return
      */
     @PostMapping("/api/v1/members")
     public CreateMemberResponse saveMemberV1(@RequestBody @Valid Member member) {
