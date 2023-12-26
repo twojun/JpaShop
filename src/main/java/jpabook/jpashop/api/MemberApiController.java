@@ -23,6 +23,8 @@ public class MemberApiController {
         return memberService.findMembers();
     }
 
+
+    // 조회 V2 : MemberDTO 추가
     @GetMapping("/api/v2/members")
     public Result memberV2() {
         List<Member> findMembers = memberService.findMembers();
