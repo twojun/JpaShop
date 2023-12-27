@@ -91,4 +91,12 @@ public class OrderRepository {
         return query.getResultList();
     }
 
+    // 전부 lazy로 설정하고 필요한 것만 fetch join으로 객체 그래프를 묶어서 데이터베이스에서 조회한다.
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class
+        ).getResultList();
+    }
 }
